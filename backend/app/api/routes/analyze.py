@@ -13,7 +13,7 @@ async def analyze_screenshot(file: UploadFile = File(...)):
 
     Pipeline (to be implemented):
       1. Embed the uploaded image with CLIP/SigLIP
-      2. Query Pinecone for nearest neighbors (text + image chunks)
+      2. Query Pinecone for dot product (text + image chunks)
       3. Feed retrieved context + screenshot into Claude for synthesis
     """
     if not file.content_type or not file.content_type.startswith("image/"):
