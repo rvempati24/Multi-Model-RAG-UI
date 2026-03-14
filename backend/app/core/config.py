@@ -5,7 +5,7 @@ class Settings(BaseSettings):
     model_config = SettingsConfigDict(env_file=".env", env_file_encoding="utf-8")
 
     # API keys — required, no defaults (fail fast if missing)
-    anthropic_api_key: str
+    gemini_api_key: str
     pinecone_api_key: str
 
     # Pinecone
@@ -29,8 +29,8 @@ class Settings(BaseSettings):
     quality_weight: float = 0.4
 
     # LLM
-    claude_model: str = "claude-sonnet-4-6"
-    claude_max_tokens: int = 1024
+    gemini_model: str = "gemini-1.5-pro"
+    gemini_max_tokens: int = 1024
 
     # Image upload limit (bytes) — 5 MB
     max_image_bytes: int = 5 * 1024 * 1024
